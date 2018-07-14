@@ -1,0 +1,78 @@
+<!--  This is a first look at react components
+
+      Author: Richard Myatt
+      Date: 5 June 2018
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/drum_machine.css">
+    <meta charset="UTF-8" />
+    <title>Drum Machine</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="app"></div>
+
+
+    <script type="text/babel">
+
+      const Title = (props) => {
+        return (
+          <div className="title">
+            <div className="titleContainer">
+              <h1>{props.text}</h1>
+              <h5>{props.subtext}</h5>
+            </div>
+          </div>
+        );
+      };
+
+      const Display = (props) => {
+        return (
+          <div id="display">
+            <h3>Output</h3>
+          </div>
+        );
+      };
+
+      class DrumPad extends React.Component {
+        render() {
+          return (
+            <div className="drum-pad">
+            </div>
+          );
+        }
+      }
+
+      class Main extends React.Component {
+        render() {
+          return (
+            <div id="drum-machine">
+              <Title text="Drum Machine"
+                     subtext="A FreeCodeCamp Challenge" />
+
+              <Display />
+
+              <DrumPad />
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <Main />,
+        document.getElementById('app')
+      );
+
+    </script>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+  </body>
+</html>
