@@ -22,6 +22,15 @@
 
     <script type="text/babel">
 
+      const thunder = new Audio("audio/thunder_clap.mp3");
+
+      document.addEventListener("keydown", function(event) {
+        console.log("a key has been pressed " + event.key);
+        if(event.key === 'w') {
+          thunder.play();
+        }
+      })
+
       const Title = (props) => {
         return (
           <div className="title">
@@ -42,15 +51,26 @@
       };
 
       class DrumPad extends React.Component {
+        constructor(props) {
+          super(props);
+          this.handleOnClick = this.handleOnClick.bind(this);
+        }
+
+        handleOnClick() {
+          thunder.play();
+
+        }
+
         render() {
           return (
-            <div className="drum-pad">
+            <div className="drum-pad" onClick={this.handleOnClick}>
             </div>
           );
         }
       }
 
       class Main extends React.Component {
+
         render() {
           return (
             <div id="drum-machine">
