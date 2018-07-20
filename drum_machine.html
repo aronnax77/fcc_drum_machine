@@ -27,9 +27,13 @@
       document.addEventListener("keydown", function(event) {
         console.log("a key has been pressed " + event.key);
         if(event.key === 'w') {
+          thunder.pause();
+          thunder.currentTime = 0;
           thunder.play();
         }
       })
+
+
 
       const Title = (props) => {
         return (
@@ -57,6 +61,8 @@
         }
 
         handleOnClick() {
+          thunder.pause();
+          thunder.currentTime = 0;
           thunder.play();
 
         }
@@ -69,6 +75,9 @@
         }
       }
 
+      const ids = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
+      const pads = ids.map((desc) => <DrumPad key={"pad_" + desc} id={desc} />);
+
       class Main extends React.Component {
 
         render() {
@@ -77,9 +86,11 @@
               <Title text="Drum Machine"
                      subtext="A FreeCodeCamp Challenge" />
 
-              <Display />
+              <div className="container">
+                <Display />
+                {pads}
+              </div>
 
-              <DrumPad />
             </div>
           );
         }
