@@ -1,0 +1,10 @@
+@import 'variables';
+
+.main-container {
+  width: $drum-machine-width;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, $drum-pad-container-width);
+  grid-template-rows: $drum-pad-container-height/2 repeat(3, $drum-pad-container-height);
+  border: 5px solid $drum-machine-border;
+}

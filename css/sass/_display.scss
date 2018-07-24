@@ -1,0 +1,8 @@
+#display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $output-text;
+  background-color: $output-bg;
+  grid-column: 1 / -1;
+}

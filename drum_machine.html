@@ -69,14 +69,18 @@
 
         render() {
           return (
-            <div className="drum-pad" onClick={this.handleOnClick}>
+            <div className="drum-pad-container">
+              <div className="drum-pad" onClick={this.handleOnClick}>
+                {this.props.text}
+              </div>
             </div>
+
           );
         }
       }
 
       const ids = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
-      const pads = ids.map((desc) => <DrumPad key={"pad_" + desc} id={desc} />);
+      const pads = ids.map((desc) => <DrumPad key={"pad_" + desc} id={desc} text={desc} />);
 
       class Main extends React.Component {
 
@@ -86,7 +90,7 @@
               <Title text="Drum Machine"
                      subtext="A FreeCodeCamp Challenge" />
 
-              <div className="container">
+              <div className="main-container">
                 <Display />
                 {pads}
               </div>

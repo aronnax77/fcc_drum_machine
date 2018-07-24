@@ -1,0 +1,19 @@
+// colors
+$document-bg: #eee;      // light grey
+$title-bg: #333;         // dark grey
+$title-text: lightblue;
+$output-text: blue;
+$output-bg: #333;        // dark grey
+$drum-machine-border: #333;
+$drum-pad-band: #999;    // mid grey
+$drum-pad: lightyellow;
+
+// drum pad
+$drum-pad-container-width: 6vw;
+$drum-pad-container-height: $drum-pad-container-width;
+$drum-pad-width: 0.9 * $drum-pad-container-width;
+$drum-pad-height: $drum-pad-width;
+
+// drum machine
+$drum-machine-width: 3 * ($drum-pad-container-width + 0.15vw);
+$drum-machine-height: 3.5 * $drum-machine-width;

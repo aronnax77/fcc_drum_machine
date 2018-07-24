@@ -1,0 +1,21 @@
+@import 'variables';
+
+.drum-pad-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $drum-pad-container-width;
+  height: $drum-pad-container-height;
+  border: 2px solid red;
+}
+
+
+.drum-pad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $drum-pad-width;
+  height: $drum-pad-height;
+  border-radius: 50%;
+  background-color: $drum-pad;
+}
