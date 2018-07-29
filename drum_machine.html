@@ -24,6 +24,39 @@
 
       const thunder = new Audio("audio/thunder_clap.mp3");
 
+      const sound = {
+                      "Q": {track: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3",
+                            desc: "Heater" },
+                      "W": {track: "https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3",
+                            desc: "Dsc_Oh" },
+                      "E": {track: "https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3",
+                            desc: "Kick_n_Hat" },
+                      "A": {track: "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3",
+                            desc: "RP4_KICK_1" },
+                      "S": {track: "https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3",
+                            desc: "Chord_1" },
+                      "D": {track: "https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3",
+                            desc: "Bld_H1" },
+                      "Z": {track: "https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3",
+                            desc: "punchy_kick_1" },
+                      "X": {track: "https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3",
+                            desc: "side_stick_1" },
+                      "C": {track: "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
+                            desc: "Brk_Snr" }
+                  };
+
+      const sndQ = new Audio(sound.Q.track);
+      const sndW = new Audio(sound.W.track);
+      const sndE = new Audio(sound.E.track);
+      const sndA = new Audio(sound.A.track);
+      const sndS = new Audio(sound.S.track);
+      const sndD = new Audio(sound.D.track);
+      const sndZ = new Audio(sound.Z.track);
+      const sndX = new Audio(sound.X.track);
+      const sndC = new Audio(sound.C.track);
+
+
+
       document.addEventListener("keydown", function(event) {
         console.log("a key has been pressed " + event.key);
         if(event.key === 'w') {
@@ -60,10 +93,10 @@
           this.handleOnClick = this.handleOnClick.bind(this);
         }
 
-        handleOnClick() {
-          thunder.pause();
-          thunder.currentTime = 0;
-          thunder.play();
+        handleOnClick(event) {
+          console.log(event.target.innerHTML);
+          let id = event.target.innerHTML;
+          playSound(id);
 
         }
 
@@ -97,6 +130,56 @@
 
             </div>
           );
+        }
+      }
+
+      function playSound(i) {
+        switch(i) {
+          case "Q":
+            sndQ.pause();
+            sndQ.currentTime = 0;
+            sndQ.play();
+            break;
+            case "W":
+              sndW.pause();
+              sndW.currentTime = 0;
+              sndW.play();
+              break;
+            case "E":
+              sndE.pause();
+              sndE.currentTime = 0;
+              sndE.play();
+              break;
+            case "A":
+              sndA.pause();
+              sndA.currentTime = 0;
+              sndA.play();
+              break;
+            case "S":
+              sndS.pause();
+              sndS.currentTime = 0;
+              sndS.play();
+              break;
+            case "D":
+              sndD.pause();
+              sndD.currentTime = 0;
+              sndD.play();
+              break;
+            case "Z":
+              sndZ.pause();
+              sndZ.currentTime = 0;
+              sndZ.play();
+              break;
+            case "X":
+              sndX.pause();
+              sndX.currentTime = 0;
+              sndX.play();
+              break;
+            case "C":
+              sndC.pause();
+              sndC.currentTime = 0;
+              sndC.play();
+              break;
         }
       }
 
