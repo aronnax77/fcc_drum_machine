@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 .main-container {
   width: $drum-machine-width;
@@ -7,4 +8,36 @@
   grid-template-columns: repeat(3, $drum-pad-container-width);
   grid-template-rows: $drum-pad-container-height/2 repeat(3, $drum-pad-container-height);
   border: 5px solid $drum-machine-border;
+
+  @include mq(1400px) {
+    // drum pad
+    $drum-pad-container-width: 10vw;
+    $drum-pad-container-height: $drum-pad-container-width;
+    $drum-pad-width: 0.9 * $drum-pad-container-width;
+    $drum-pad-height: $drum-pad-width;
+
+    // drum machine
+    $drum-machine-width: 3 * ($drum-pad-container-width);
+    $drum-machine-height: 3.5 * $drum-machine-width;
+
+    width: $drum-machine-width;
+    grid-template-columns: repeat(3, $drum-pad-container-width);
+    grid-template-rows: $drum-pad-container-height/2 repeat(3, $drum-pad-container-height);
+  }
+
+  @include mq(800px) {
+    // drum pad
+    $drum-pad-container-width: 20vw;
+    $drum-pad-container-height: $drum-pad-container-width;
+    $drum-pad-width: 0.9 * $drum-pad-container-width;
+    $drum-pad-height: $drum-pad-width;
+
+    // drum machine
+    $drum-machine-width: 3 * ($drum-pad-container-width);
+    $drum-machine-height: 3.5 * $drum-machine-width;
+
+    width: $drum-machine-width;
+    grid-template-columns: repeat(3, $drum-pad-container-width);
+    grid-template-rows: $drum-pad-container-height/2 repeat(3, $drum-pad-container-height);
+  }
 }

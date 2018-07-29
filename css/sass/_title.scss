@@ -6,9 +6,14 @@
   color: $title-text;
   background-color: $title-bg;
   padding: 5px;
-}
 
-.titleContainer {
-  width: 450px;
-  text-align: center;
+  h1, h5 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .titleContainer {
+    width: 450px;
+    text-align: center;
+  }
 }

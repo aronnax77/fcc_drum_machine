@@ -6,16 +6,81 @@
   align-items: center;
   width: $drum-pad-container-width;
   height: $drum-pad-container-height;
-  border: 2px solid red;
-}
+  //border: 2px solid red;
 
+  .drum-pad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+    font-weight: bold;
+    width: $drum-pad-width;
+    height: $drum-pad-height;
+    border-radius: 50%;
+    background-color: $drum-pad;
 
-.drum-pad {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: $drum-pad-width;
-  height: $drum-pad-height;
-  border-radius: 50%;
-  background-color: $drum-pad;
+    @include mq(1400px) {
+      // drum pad
+      $drum-pad-container-width: 10vw;
+      $drum-pad-container-height: $drum-pad-container-width;
+      $drum-pad-width: 0.9 * $drum-pad-container-width;
+      $drum-pad-height: $drum-pad-width;
+
+      // drum machine
+      $drum-machine-width: 3 * ($drum-pad-container-width);
+      $drum-machine-height: 3.5 * $drum-machine-width;
+
+      font-size: 1.6vw;
+      width: $drum-pad-width;
+      height: $drum-pad-height;
+    }
+
+    @include mq(800px) {
+      $drum-pad-container-width: 20vw;
+      $drum-pad-container-height: $drum-pad-container-width;
+      $drum-pad-width: 0.9 * $drum-pad-container-width;
+      $drum-pad-height: $drum-pad-width;
+
+      // drum machine
+      $drum-machine-width: 3 * ($drum-pad-container-width);
+      $drum-machine-height: 3.5 * $drum-machine-width;
+
+      font-size: 4vw;
+      width: $drum-pad-width;
+      height: $drum-pad-height;
+    }
+  }
+
+  @include mq(1400px) {
+    // drum pad
+    $drum-pad-container-width: 10vw;
+    $drum-pad-container-height: $drum-pad-container-width;
+    $drum-pad-width: 0.9 * $drum-pad-container-width;
+    $drum-pad-height: $drum-pad-width;
+
+    // drum machine
+    $drum-machine-width: 3 * ($drum-pad-container-width);
+    $drum-machine-height: 3.5 * $drum-machine-width;
+
+    width: $drum-pad-container-width;
+    height: $drum-pad-container-height;
+    //border: 2px solid red;
+
+  }
+
+  @include mq(800px) {
+    // drum pad
+    $drum-pad-container-width: 20vw;
+    $drum-pad-container-height: $drum-pad-container-width;
+    $drum-pad-width: 0.9 * $drum-pad-container-width;
+    $drum-pad-height: $drum-pad-width;
+
+    // drum machine
+    $drum-machine-width: 3 * ($drum-pad-container-width);
+    $drum-machine-height: 3.5 * $drum-machine-width;
+
+    width: $drum-pad-container-width;
+    height: $drum-pad-container-height;
+    //border: 2px solid red;
+  }
 }

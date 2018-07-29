@@ -1,3 +1,5 @@
+@import 'mixins';
+
 // colors
 $document-bg: #eee;      // light grey
 $title-bg: #333;         // dark grey
@@ -15,5 +17,5 @@ $drum-pad-width: 0.9 * $drum-pad-container-width;
 $drum-pad-height: $drum-pad-width;
 
 // drum machine
-$drum-machine-width: 3 * ($drum-pad-container-width + 0.15vw);
+$drum-machine-width: 3 * ($drum-pad-container-width);
 $drum-machine-height: 3.5 * $drum-machine-width;
