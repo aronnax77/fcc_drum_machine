@@ -112,6 +112,8 @@
           window.display = this;
           this.setOutput = this.setOutput.bind(this);
           this.handleKeyDown = this.handleKeyDown.bind(this);
+          this.playDrum = this.playDrum.bind(this);
+          this.playSound = this.playSound.bind(this);
         }
 
         setOutput(id) {
@@ -120,22 +122,82 @@
 
         handleKeyDown(event) {
 
-          var keyPressed = event.key;
+          let keyPressed = event.key;
           keyPressed = keyPressed.toUpperCase();
-          const elem = document.getElementById(keyPressed);
-          elem.pause();
-          elem.currentTime = 0;
-          elem.play();
 
-          this.setState({output: sound[keyPressed].desc})
+          if(keyPressed === "q" || "Q" || "w" || "W"
+                            || "e" || "E" || "a" || "A"
+                            || "s" || "S" || "d" || "D"
+                            || "z" || "Z" || "x" || "X"
+                            || "c" || "C") {
 
+            this.playDrum(keyPressed);
+
+
+          }
+        }
+
+        playDrum(k) {
+          switch(k) {
+            case "Q":
+              var elem = document.getElementById("Q");
+              this.playSound(elem);
+              this.setState({output: sound["Q"].desc});
+              break;
+            case "W":
+              var elem = document.getElementById("W");
+              this.playSound(elem);
+              this.setState({output: sound["W"].desc});
+              break;
+            case "E":
+              var elem = document.getElementById("E");
+              this.playSound(elem);
+              this.setState({output: sound["E"].desc});
+              break;
+            case "A":
+              var elem = document.getElementById("A");
+              this.playSound(elem);
+              this.setState({output: sound["A"].desc});
+              break;
+            case "S":
+              var elem = document.getElementById("S");
+              this.playSound(elem);
+              this.setState({output: sound["S"].desc});
+              break;
+            case "D":
+              var elem = document.getElementById("D");
+              this.playSound(elem);
+              this.setState({output: sound["D"].desc});
+              break;
+            case "Z":
+              var elem = document.getElementById("Z");
+              this.playSound(elem);
+              this.setState({output: sound["Z"].desc});
+              break;
+            case "X":
+              var elem = document.getElementById("X");
+              this.playSound(elem);
+              this.setState({output: sound["X"].desc});
+              break;
+            case "C":
+              var elem = document.getElementById("C");
+              this.playSound(elem);
+              this.setState({output: sound["C"].desc});
+              break;
+          }
+        }
+
+        playSound(el) {
+          el.pause();
+          el.currentTime = 0;
+          el.play();
         }
 
         render() {
           return (
             <div id="drum-machine" onKeyDown={this.handleKeyDown} tabIndex="0" >
               <Title text="Drum Machine"
-                     subtext="A FreeCodeCamp Challenge" />
+                     subtext="" />
 
               <div className="main-container">
                 <Display output={this.state.output}/>

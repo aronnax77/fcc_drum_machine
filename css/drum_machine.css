@@ -6,8 +6,12 @@ body {
   background-color: #eee; }
 
 .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: lightblue;
   background-color: #333;
   padding: 5px; }
@@ -37,13 +41,19 @@ body {
       grid-template-rows: 10vw repeat(3, 20vw); } }
 
 #display {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 1vw;
   font-weight: bold;
-  color: blue;
-  background-color: #333;
+  color: lightblue;
+  background-color: rgba(51, 51, 51, 0.8);
   grid-column: 1 / -1; }
   @media screen and (max-width: 1400px) {
     #display {
@@ -53,15 +63,28 @@ body {
       font-size: 4vw; } }
 
 .drum-pad-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 6vw;
-  height: 6vw; }
+  height: 6vw;
+  background-color: #fff; }
   .drum-pad-container .drum-pad {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 1vw;
     font-weight: bold;
     width: 5.4vw;
@@ -87,5 +110,4 @@ body {
     .drum-pad-container {
       width: 20vw;
       height: 20vw; } }
-
 /*# sourceMappingURL=drum_machine.css.map */
