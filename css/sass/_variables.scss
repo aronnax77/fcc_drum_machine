@@ -1,14 +1,15 @@
 @import 'mixins';
 
 // colors
-$document-bg: #eee;      // light grey
+$document-bg: #eef7f7;      // light grey
 $title-bg: #333;         // dark grey
 $title-text: lightblue;
-$output-text: blue;
-$output-bg: #333;        // dark grey
+$output-text: lightblue;
+$output-bg: rgba(51, 51, 51, 0.8);        // dark grey
 $drum-machine-border: #333;
 $drum-pad-band: #999;    // mid grey
 $drum-pad: lightyellow;
+$drum-pad-container: #fff;
 
 // drum pad
 $drum-pad-container-width: 6vw;
